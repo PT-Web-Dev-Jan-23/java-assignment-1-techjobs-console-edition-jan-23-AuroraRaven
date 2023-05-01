@@ -64,7 +64,7 @@ public class TechJobs {
 
                     if (searchField.equals("all")) {
                         printJobs(JobData.findByValue(searchTerm));
-                    } else  if(!JobData.findByColumnAndValue(searchField, searchTerm).contains(searchTerm)){
+                    } else  if(JobData.findByColumnAndValue(searchField, searchTerm).isEmpty()){
                         System.out.println("Term not found, try again.");
                     }else{
                         printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
